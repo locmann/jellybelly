@@ -1,0 +1,15 @@
+.cardWrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 48rem;
+    overflow: hidden;
+    padding: 0.5rem;
+    border: 1px solid #1a1a1a;
+    border-radius: 1rem;
+    &:hover {
+
+        border: 1px solid red;
+        border-radius: 1rem;
+    }
+}
