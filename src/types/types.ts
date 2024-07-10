@@ -34,3 +34,42 @@ export interface FactPagination {
   totalPages: number;
   items?: Fact[];
 }
+
+export interface Recipe {
+  recipeId: number;
+  name?: string;
+  description?: string;
+  prepTime?: string;
+  cookTime?: string;
+  totalTime?: string;
+  makingAmount?: string;
+  imageUrl?: string;
+  ingredients?: string[];
+  additions1?: string[];
+  additions2?: string[];
+  additions3?: string[];
+  directions?: string[];
+  tips?: string[];
+}
+
+export interface RecipePagination {
+  totalCount: number;
+  pageSize: number;
+  currentPage: number;
+  totalPages: number;
+  items?: Recipe[];
+}
+
+export interface Combination {
+  combinationId: number;
+  name?: string;
+  tag?: string[];
+}
+
+export interface CombinationPagination {
+  totalCount: number;
+  pageSize: number;
+  currentPage: number;
+  totalPages: number;
+  items?: Combination[];
+}

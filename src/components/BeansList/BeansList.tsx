@@ -1,11 +1,15 @@
-import { useAppContext } from 'context/context.ts';
 import { BeanCard } from 'components/BeanCard';
 import styles from './BeansList.module.css';
-import { FC, useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import { useBeans } from 'hooks/useBeans.ts';
+import { useBeansContext } from 'context/beans/beans.ts';
 
 const BeansList = () => {
-  const { beans, beanPage, setBeanPage, totalBeansPages } = useAppContext();
+  const { beanPage, setBeanPage, totalBeansPages, beans, setBeans, setTotalBeansPages } =
+    useBeansContext();
   const ref = useRef(null);
+
+  const { beansResponse, error, isLoading } = useBeans(beanPage);
   const onScroll = () => {
     if (ref.current) {
       const { scrollHeight, scrollTop, clientHeight } = ref.current;
@@ -16,6 +20,26 @@ const BeansList = () => {
       }
     }
   };
+
+  useEffect(() => {
+    if (isLoading) {
+      console.log(isLoading, 'Loading');
+    }
+    if (error) {
+      console.log(error, 'Error');
+    }
+    if (beansResponse) {
+      console.log(beansResponse, 'Beans');
+      setTotalBeansPages(beansResponse.totalPages);
+      setBeans((prevState) => {
+        if (beansResponse.items !== undefined) {
+          return [...prevState, ...beansResponse.items];
+        } else {
+          return prevState;
+        }
+      });
+    }
+  }, [beansResponse, error, isLoading, setBeans, beanPage]);
 
   return (
     <div

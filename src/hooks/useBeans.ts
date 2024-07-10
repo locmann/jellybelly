@@ -12,5 +12,5 @@ export const useBeans = (page: number) => {
     queryFn: () => fetchBeans(page),
   });
 
-  return { beans: data, isLoading, error };
+  return { beansResponse: data, isLoading, error };
 };

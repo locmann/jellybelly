@@ -12,5 +12,5 @@ export const useFacts = (page: number) => {
     queryFn: () => fetchFacts(page),
   });
 
-  return { facts: data, error, isLoading };
+  return { factsResponse: data, error, isLoading };
 };

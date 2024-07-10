@@ -1,9 +1,12 @@
-import { useAppContext } from 'context/context.ts';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from './FactsList.module.css';
 import { FactCard } from 'components/FactCard';
+import { useFactsContext } from 'context/facts/facts.ts';
+import { useFacts } from 'hooks/useFacts.ts';
 const FactsList = () => {
-  const { facts, factPage, setFactPage, totalFactsPages } = useAppContext();
+  const { facts, factPage, setFactPage, totalFactsPages, setTotalFactsPages, setFacts } =
+    useFactsContext();
+  const { factsResponse, error, isLoading } = useFacts(factPage);
 
   const ref = useRef(null);
 
@@ -17,6 +20,26 @@ const FactsList = () => {
       }
     }
   };
+
+  useEffect(() => {
+    if (isLoading) {
+      console.log(isLoading, 'Loading');
+    }
+    if (error) {
+      console.log(error, 'Error');
+    }
+    if (factsResponse) {
+      console.log(factsResponse, 'Facts');
+      setTotalFactsPages(factsResponse.totalPages);
+      setFacts((prevState) => {
+        if (factsResponse.items !== undefined) {
+          return [...prevState, ...factsResponse.items];
+        } else {
+          return prevState;
+        }
+      });
+    }
+  }, [isLoading, error, factsResponse, setFacts, factPage]);
 
   return (
     <div
