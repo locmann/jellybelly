@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
-import { CombinationsContext } from 'types/contextTypes.ts';
+import { CombinationsContextType } from 'types/contextTypes.ts';
 
-export const CombinationsContext = createContext<CombinationsContext | undefined>(undefined);
+export const CombinationsContext = createContext<CombinationsContextType | undefined>(undefined);
 
 export const useCombinationsContext = () => {
   const contextData = useContext(CombinationsContext);

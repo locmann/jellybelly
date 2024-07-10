@@ -1,6 +1,7 @@
 import { Bean } from 'types/types.ts';
 import { FC } from 'react';
 import styles from './BeanCard.module.css';
+import { NavLink } from 'react-router-dom';
 
 type Props = {
   bean: Bean;
@@ -9,7 +10,9 @@ type Props = {
 const BeanCard: FC<Props> = ({ bean }) => {
   return (
     <div className={styles.cardWrapper}>
-      <h4>{bean.flavorName}</h4>
+      <NavLink to={`/beans/${bean.beanId}`}>
+        <h4>{bean.flavorName}</h4>
+      </NavLink>
       <img
         src={bean.imageUrl}
         alt={bean.flavorName}

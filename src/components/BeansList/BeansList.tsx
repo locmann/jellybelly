@@ -39,7 +39,7 @@ const BeansList = () => {
         }
       });
     }
-  }, [beansResponse, error, isLoading, setBeans, beanPage]);
+  }, [beansResponse, error, isLoading, setBeans, beanPage, setTotalBeansPages]);
 
   return (
     <div

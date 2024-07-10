@@ -46,7 +46,14 @@ const CombinationsList = () => {
         }
       });
     }
-  }, [isLoading, error, combinationsResponse, setCombinations, combinationPage]);
+  }, [
+    isLoading,
+    error,
+    combinationsResponse,
+    setCombinations,
+    combinationPage,
+    setTotalCombinationsPages,
+  ]);
 
   return (
     <div

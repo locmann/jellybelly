@@ -39,7 +39,7 @@ const FactsList = () => {
         }
       });
     }
-  }, [isLoading, error, factsResponse, setFacts, factPage]);
+  }, [isLoading, error, factsResponse, setFacts, factPage, setTotalFactsPages]);
 
   return (
     <div

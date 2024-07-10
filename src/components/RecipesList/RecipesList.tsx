@@ -46,7 +46,7 @@ const RecipesList = () => {
         }
       });
     }
-  }, [isLoading, error, recipesResponse, setRecipes, recipePage]);
+  }, [isLoading, error, recipesResponse, setRecipes, recipePage, setTotalRecipesPages]);
 
   return (
     <div

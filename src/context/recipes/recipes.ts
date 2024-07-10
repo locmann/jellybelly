@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
-import { RecipesContext } from 'types/contextTypes.ts';
+import { RecipesContextType } from 'types/contextTypes.ts';
 
-export const RecipesContext = createContext<RecipesContext | undefined>(undefined);
+export const RecipesContext = createContext<RecipesContextType | undefined>(undefined);
 
 export const useRecipesContext = () => {
   const contextData = useContext(RecipesContext);

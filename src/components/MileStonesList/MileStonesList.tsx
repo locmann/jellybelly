@@ -46,7 +46,7 @@ const MileStonesList = () => {
         }
       });
     }
-  }, [isLoading, error, milestonesResponse, setMileStones, mileStonePage]);
+  }, [isLoading, error, milestonesResponse, setMileStones, mileStonePage, setTotalMileStonesPages]);
 
   return (
     <div

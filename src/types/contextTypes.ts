@@ -1,7 +1,7 @@
 import { Bean, Combination, Fact, MileStone, Recipe } from 'types/types.ts';
 import { Dispatch, SetStateAction } from 'react';
 
-export interface BeansContext {
+export interface BeansContextType {
   beans: Bean[];
   setBeans: Dispatch<SetStateAction<Bean[]>>;
   beanPage: number;
@@ -10,7 +10,7 @@ export interface BeansContext {
   setTotalBeansPages: Dispatch<SetStateAction<number>>;
 }
 
-export interface FactsContext {
+export interface FactsContextType {
   facts: Fact[];
   setFacts: Dispatch<SetStateAction<Fact[]>>;
   factPage: number;
@@ -19,7 +19,7 @@ export interface FactsContext {
   setTotalFactsPages: Dispatch<SetStateAction<number>>;
 }
 
-export interface RecipesContext {
+export interface RecipesContextType {
   recipes: Recipe[];
   setRecipes: Dispatch<SetStateAction<Recipe[]>>;
   recipePage: number;
@@ -28,7 +28,7 @@ export interface RecipesContext {
   setTotalRecipesPages: Dispatch<SetStateAction<number>>;
 }
 
-export interface CombinationsContext {
+export interface CombinationsContextType {
   combinations: Combination[];
   setCombinations: Dispatch<SetStateAction<Combination[]>>;
   combinationPage: number;
@@ -37,7 +37,7 @@ export interface CombinationsContext {
   setTotalCombinationsPages: Dispatch<SetStateAction<number>>;
 }
 
-export interface MileStonesContext {
+export interface MileStonesContextType {
   mileStones: MileStone[];
   setMileStones: Dispatch<SetStateAction<MileStone[]>>;
   mileStonePage: number;

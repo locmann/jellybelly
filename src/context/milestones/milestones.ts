@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
-import { MileStonesContext } from 'types/contextTypes.ts';
+import { MileStonesContextType } from 'types/contextTypes.ts';
 
-export const MileStonesContext = createContext<MileStonesContext | undefined>(undefined);
+export const MileStonesContext = createContext<MileStonesContextType | undefined>(undefined);
 
 export const useMileStonesContext = () => {
   const contextData = useContext(MileStonesContext);

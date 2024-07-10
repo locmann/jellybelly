@@ -5,6 +5,8 @@ import { Facts } from 'components/Facts';
 import { Recipes } from 'components/Recipes';
 import { Combinations } from 'components/Combinations';
 import { MileStones } from 'components/MileStones';
+import { DetailedBean } from 'components/DetailedBean';
+import { DetailedRecipe } from 'components/DetailedRecipe';
 
 export const ROUTES: RouteObject[] = [
   {
@@ -16,12 +18,20 @@ export const ROUTES: RouteObject[] = [
         element: <Beans />,
       },
       {
+        path: 'beans/:beanId',
+        element: <DetailedBean />,
+      },
+      {
         path: 'facts',
         element: <Facts />,
       },
       {
         path: 'recipes',
         element: <Recipes />,
+      },
+      {
+        path: 'recipes/:recipeId',
+        element: <DetailedRecipe />,
       },
       {
         path: 'combinations',
