@@ -1,6 +1,7 @@
 import { RouteObject } from 'react-router-dom';
 import { AppLayout } from 'ui/AppLayout';
 import { Beans } from 'components/Beans';
+import { Facts } from 'components/Facts';
 
 export const ROUTES: RouteObject[] = [
   {
@@ -10,6 +11,10 @@ export const ROUTES: RouteObject[] = [
       {
         path: 'beans',
         element: <Beans />,
+      },
+      {
+        path: 'facts',
+        element: <Facts />,
       },
     ],
   },

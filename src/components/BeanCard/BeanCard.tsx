@@ -7,8 +7,6 @@ type Props = {
 };
 
 const BeanCard: FC<Props> = ({ bean }) => {
-  console.log(bean);
-
   return (
     <div className={styles.cardWrapper}>
       <h4>{bean.flavorName}</h4>

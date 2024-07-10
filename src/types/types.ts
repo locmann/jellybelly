@@ -20,3 +20,17 @@ export interface BeanPagination {
   totalPages: number;
   items?: Bean[];
 }
+
+export interface Fact {
+  factId: number;
+  title?: string;
+  description?: string;
+}
+
+export interface FactPagination {
+  totalCount: number;
+  pageSize: number;
+  currentPage: number;
+  totalPages: number;
+  items?: Fact[];
+}

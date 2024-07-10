@@ -4,9 +4,9 @@ import { BeansList } from 'components/BeansList';
 import { useAppContext } from 'context/context.ts';
 
 const Beans = () => {
-  const { beans, error, isLoading } = useBeans();
+  const { setBeans, beanPage, setTotalBeansPages } = useAppContext();
 
-  const { setBeans } = useAppContext();
+  const { beans, error, isLoading } = useBeans(beanPage);
 
   useEffect(() => {
     if (isLoading) {
@@ -17,6 +17,7 @@ const Beans = () => {
     }
     if (beans) {
       console.log(beans, 'Beans');
+      setTotalBeansPages(beans.totalPages);
       setBeans((prevState) => {
         if (beans.items !== undefined) {
           return [...prevState, ...beans.items];
@@ -25,7 +26,7 @@ const Beans = () => {
         }
       });
     }
-  }, [beans, error, isLoading, setBeans]);
+  }, [beans, error, isLoading, setBeans, beanPage]);
 
   return <BeansList />;
 };
