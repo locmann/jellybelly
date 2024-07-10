@@ -2,7 +2,7 @@ import { useCombinationsContext } from 'context/combinations/combinations.ts';
 import { useCombinations } from 'hooks/useCombinations.ts';
 import { useEffect, useRef } from 'react';
 import { CombinationCard } from 'components/CombinationCard';
-
+import styles from './CombinationsList.module.css';
 const CombinationsList = () => {
   const {
     setCombinations,
@@ -52,6 +52,7 @@ const CombinationsList = () => {
     <div
       ref={ref}
       onScroll={onScroll}
+      className={styles.list}
     >
       {combinations.map((combination) => (
         <CombinationCard

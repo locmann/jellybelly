@@ -73,3 +73,17 @@ export interface CombinationPagination {
   totalPages: number;
   items?: Combination[];
 }
+
+export interface MileStone {
+  mileStoneId: number;
+  year: number;
+  description?: string;
+}
+
+export interface MileStonePagination {
+  totalCount: number;
+  pageSize: number;
+  currentPage: number;
+  totalPages: number;
+  items?: MileStone[];
+}

@@ -1,4 +1,4 @@
-import { Bean, Combination, Fact, Recipe } from 'types/types.ts';
+import { Bean, Combination, Fact, MileStone, Recipe } from 'types/types.ts';
 import { Dispatch, SetStateAction } from 'react';
 
 export interface BeansContext {
@@ -35,4 +35,13 @@ export interface CombinationsContext {
   setCombinationPage: Dispatch<SetStateAction<number>>;
   totalCombinationsPages: number;
   setTotalCombinationsPages: Dispatch<SetStateAction<number>>;
+}
+
+export interface MileStonesContext {
+  mileStones: MileStone[];
+  setMileStones: Dispatch<SetStateAction<MileStone[]>>;
+  mileStonePage: number;
+  setMileStonePage: Dispatch<SetStateAction<number>>;
+  totalMileStonesPages: number;
+  setTotalMileStonesPages: Dispatch<SetStateAction<number>>;
 }

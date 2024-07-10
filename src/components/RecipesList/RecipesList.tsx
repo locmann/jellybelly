@@ -36,7 +36,7 @@ const RecipesList = () => {
       console.log(error, 'Error');
     }
     if (recipesResponse) {
-      console.log(recipesResponse, 'Facts');
+      console.log(recipesResponse, 'Recipes');
       setTotalRecipesPages(recipesResponse.totalPages);
       setRecipes((prevState) => {
         if (recipesResponse.items !== undefined) {
